@@ -1,4 +1,5 @@
 import { capitalize, reverseString, calculator } from "./index";
+import { caesarCipher } from "./caesarCipher";
 
 test("capitalize should exist", () => {
   expect(capitalize).toBeDefined();
@@ -61,4 +62,20 @@ test("calculator.multiply, a funciton that takes 2 numbers and returns their pro
   expect(calculator.multiply(12, 12)).toBe(144);
   expect(calculator.multiply(1, 0)).toBe(0);
   expect(calculator.multiply(2, 2)).toBe(4);
+});
+
+test("caesarCipher should exist", () => {
+  expect(caesarCipher).toBeDefined();
+});
+
+test("caesarCipher('xyz', 3) should return 'abc'", () => {
+  expect(caesarCipher("xyz", 3)).toBe("abc");
+});
+
+test("caesarCipher('HeLLo', 3) should return 'KhOOr'", () => {
+  expect(caesarCipher("HeLLo", 3)).toBe("KhOOr");
+});
+
+test("caesarCipher('Hello, World!', 3) should return 'Khoor, Zruog!'", () => {
+  expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
 });
